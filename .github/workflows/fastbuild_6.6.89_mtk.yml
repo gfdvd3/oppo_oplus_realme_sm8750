@@ -66,7 +66,7 @@ on:
         type: boolean
         default: 'false'
       adios_enable:
-        description: '是否启用ADIOS IO调度器支持(提升IO读写性能)'
+        description: '是否启用ADIOS IO调度器支持(提升IO读写性能)支持kali'
         required: true
         type: boolean
         default: 'true'
@@ -514,6 +514,71 @@ jobs:
           cd kernel_workspace
           echo "CONFIG_MQ_IOSCHED_ADIOS=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_MQ_IOSCHED_DEFAULT_ADIOS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MODULE_FORCE_UNLOAD=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BUILD_ARM64_APPENDED_DTB_IMAGE=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIBTUSB=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIBTUSB_BCM=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIBTUSB_RTL=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIUART=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIUART_H4=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIBCM203X=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIBPA10X=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIBFUSB=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_BT_HCIVHCI=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_CFG80211_WEXT=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MAC80211=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MAC80211_MESH=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_WLAN_VENDOR_ATH=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_ATH9K_HTC=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_CARL9170=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_ATH6KL=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_ATH6KL_USB=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_WLAN_VENDOR_MEDIATEK=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MT7601U=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_WLAN_VENDOR_RALINK=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2X00=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2500USB=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT73USB=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB_RT33XX=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB_RT35XX=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB_RT3573=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB_RT53XX=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB_RT55XX=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RT2800USB_UNKNOWN=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_WLAN_VENDOR_REALTEK=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RTL8187=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RTL_CARDS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RTL8192CU=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_RTL8XXXU_UNTESTED=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_WLAN_VENDOR_ZYDAS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_ZD1201=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_ZD1211RW=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_NET_RNDIS_WLAN=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MEDIA_DIGITAL_TV_SUPPORT=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MEDIA_SDR_SUPPORT=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_AIRSPY=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_HACKRF=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_MSI2500=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_MEDIA_SUBDRV_AUTOSELECT=n" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DVB_RTL2830=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DVB_RTL2832=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DVB_RTL2832_SDR=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DVB_SI2168=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DVB_ZD1301_DEMOD=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NETWORK_FILESYSTEMS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NFS_V2=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NFS_V3=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NFS_V4=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NFSD=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NFSD_V3=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NFSD_V4=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_ACM=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_CONFIGFS_OBEX=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_CONFIGFS_ECM_SUBSET=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_CONFIGFS_RNDIS=y" >> ./common/arch/arm64/configs/gki_defconfig
+
 
       - name: 启用Re-Kernel支持
         if: inputs.rekernel_enable
